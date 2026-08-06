@@ -552,7 +552,6 @@ O escopo atual não exige testes automatizados.
 
 - execução local;
 - comparação com protótipo;
-- responsividade;
 - interações;
 - estados aplicáveis;
 - lint, typecheck e build, quando disponíveis.
