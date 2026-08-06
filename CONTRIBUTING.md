@@ -10,7 +10,7 @@ As regras gerais deste documento devem ser seguidas por Produto, UI/UX, Frontend
 
 ## 1. Idioma e padronização técnica
 
-A documentação, as discussões e os critérios de aceite poderão ser escritos em português.
+As informações não técnicas como documentação, as discussões e os critérios de aceite serão escritos em português.
 
 Os elementos técnicos do projeto deverão ser escritos em inglês, incluindo:
 
@@ -146,7 +146,7 @@ Caso alguma informação importante esteja ausente, converse com o líder do tim
 
 Uma Issue em `Backlog` ainda pode estar incompleta.
 
-Uma Issue em `Ready` ou deve estar pronta para execução.
+Uma Issue em `Ready` deve estar pronta para execução.
 
 ---
 
