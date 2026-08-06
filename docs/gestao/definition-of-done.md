@@ -43,7 +43,6 @@ Uma Issue estará concluída quando:
 
 - [ ] a aplicação executa localmente;
 - [ ] a interface segue o protótipo aprovado;
-- [ ] a responsividade foi verificada;
 - [ ] os estados de interação aplicáveis foram implementados;
 - [ ] a navegação por teclado foi verificada quando aplicável;
 - [ ] o lint foi executado, quando disponível;
