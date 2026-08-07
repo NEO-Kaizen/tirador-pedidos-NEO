@@ -1,6 +1,6 @@
 # Catálogo de Artefatos e Bibliografia do Projeto
 
-**Integrantes do Time:** Lucas Rodrigues, Clebson Oliveira, Cesar Augusto, Ezaú Santos, Marques
+**Integrantes do Time:** Lucas Rodrigues, Clebson Oliveira, Cesar Augusto, Ezaú Santos, Mateus Marques
 
 ## 1. Documentação de Requisitos e Negócio
 
@@ -20,7 +20,7 @@
 - **Nome do Arquivo:** 04-08 - Formulário de levantamento de requisitos.docx
 - **Data:** 04/08/2026
 - **Autor(es):** Lucas Rodrigues, Clebson Oliveira
-- **Colaboradores:** Cesar Augusto, Ezaú Santos, Marques
+- **Colaboradores:** Cesar Augusto, Ezaú Santos, Mateus Marques
 - **Status:** Concluído 🟢 
 - **Descrição:** Documento base com as perguntas padrão utilizadas para a coleta inicial de requisitos com o cliente.
 - **Local/Link:** Senha: *NEOt8kaizen*
@@ -60,7 +60,7 @@
 - **Nome do Arquivo:** 28-07 - Diagrama de fluxo da aplicação - versão 2.svg
   - **Data:** 28/07/2026 | **Status:** Versão Atual 🟢 
 - **Autor(es) dos Fluxos:** Clebson Oliveira
-- **Colaboradores:** Lucas Rodrigues, Cesar Augusto, Ezaú Santos, Marques
+- **Colaboradores:** Lucas Rodrigues, Cesar Augusto, Ezaú Santos, Mateus Marques
 - **Descrição:** Mapeamento visual das telas e caminhos que o usuário percorre dentro da aplicação.
 - **Local/Link:** Senha: *NEOt8kaizen*
 
