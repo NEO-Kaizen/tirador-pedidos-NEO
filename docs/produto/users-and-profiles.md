@@ -34,13 +34,10 @@
     <li>Analista/Mapeador.</li>
     <li>Administrador do NEO.</li>
     <li>Gestor/Visualizador.</li>
-    
-    Além desses, o time registrou a necessidade de um quinto perfil técnico:
-
-<li>Admin Root.</li>
+    <li>Admin Root.</li>
 </ol>
 
-<p>O Admin Root deve ser tratado como uma role técnica/administrativa, criada por decisão técnica do time. Os limites exatos desse perfil ainda precisam de validação.</p>
+<p>O Admin Root não está previsto em documentação tecnica, entretanto, devido a necessidades operacionais, se adicionou o Root. Ele deve ser tratado como uma role técnica/administrativa, criada por decisão técnica do time de produto. Os limites exatos desse perfil ainda precisam de validação.</p>
 
 ## 3. Resumo dos perfis
 
@@ -50,13 +47,13 @@
 | Analista/Mapeador | Usuário operacional | Conduzir triagem, análise, mapeamento e atualização do andamento. |
 | Administrador do NEO | Usuário administrativo | Administrar fila, categorias, responsáveis, parâmetros, exportações e auditoria. |
 | Gestor/Visualizador | Usuário de visualização | Consultar fila, indicadores e relatórios sem alterar registros operacionais. |
-| Admin Root | Role técnica | Gerencia usuários, visualiza solicitações e delega solicitações. |
+| Admin Root | Role técnica | Gerencia usuários, visualiza solicitações e delega solicitações e possui todas as atribuições anteriores. |
 
 ## 4. Solicitante
 
 ### Objetivo dentro do sistema
 
-<p>O Solicitante é o usuário que abre uma nova solicitação para o NEO e acompanha o andamento da própria demanda.</p>
+<p>O Solicitante é o usuário que abre uma nova solicitação a ser tratada pela NEO e acompanha o andamento da própria demanda.</p>
 
 ### Necessidades principais
 
@@ -73,20 +70,20 @@
 
 | Ação | Situação |
 |---|---|
-| Acessar a tela inicial da aplicação. | Conhecido |
-| Abrir nova solicitação. | Conhecido |
-| Preencher dados do formulário. | Conhecido |
-| Receber protocolo após envio. | Conhecido |
-| Consultar solicitação por protocolo. | Conhecido |
-| Acompanhar status público. | Conhecido |
-| Visualizar pendências destinadas ao solicitante. | Conhecido |
-| Complementar informações quando permitido. | Conhecido, mas depende de definição |
-| Salvar ou imprimir comprovante. | Conhecido |
-| Visualizar fila administrativa. | Não permitido |
-| Visualizar observações internas. | Não permitido |
-| Alterar status. | Não permitido |
-| Definir prioridade. | Não permitido |
-| Atribuir responsável. | Não permitido |
+| Acessar a tela inicial da aplicação. | Conhecido/Permitido |
+| Abrir nova solicitação. | Conhecido/Permitido |
+| Preencher dados do formulário. | Conhecido/Permitido |
+| Receber protocolo após envio. | Conhecido/Permitido |
+| Consultar solicitação por protocolo. | Conhecido/Permitido |
+| Acompanhar status público. | Conhecido/Permitido |
+| Visualizar pendências destinadas ao solicitante. | Conhecido/Permitido |
+| Complementar informações quando permitido. | Conhecido/Permitido |
+| Salvar ou imprimir comprovante. | Conhecido/Permitido |
+| Visualizar fila administrativa. | Conhecido/Não permitido |
+| Visualizar observações internas. | Conhecido/Não permitido |
+| Alterar status. | Conhecido/Não permitido |
+| Definir prioridade. | Conhecido/Não permitido |
+| Atribuir responsável. | Conhecido/Não permitido |
 
 ### Restrições conhecidas
 
@@ -94,7 +91,6 @@
     <li>não pode visualizar observações internas.</li>
     <li>não pode acessar a fila completa do NEO.</li>
     <li>não pode alterar registros operacionais.</li>
-    <li>não deve acessar solicitações de outros usuários sem permissão.</li>
     <li>não haverá reconhecimento automático do usuário.</li>
     <li>os dados do solicitante serão informados manualmente no formulário.</li>
 </ul>
@@ -103,8 +99,7 @@
 
 | Pendência | Impacto | Responsável por decidir |
 |---|---|---|
-| O solicitante poderá editar a solicitação após o envio? | Impacta formulário, fluxo e banco. | Produto. |
-| Em quais situações o solicitante poderá complementar informações? | Impacta tela de acompanhamento e status. | Produto. | (remover?)
+| Em quais situações o solicitante poderá complementar informações? | Impacta tela de acompanhamento e status. | Produto. | 
 | A consulta exigirá apenas protocolo e e-mail? | Impacta segurança e usabilidade. | Produto e Backend. |
 | O solicitante poderá cancelar a própria solicitação? | Impacta fluxo e status. | Produto. |
 
@@ -135,24 +130,24 @@
 
 | Ação | Situação |
 |---|---|
-| Consultar demandas atribuídas. | Conhecido |
-| Revisar informações recebidas. | Conhecido |
-| Ajustar categoria. | Conhecido |
-| Registrar complexidade preliminar. | Conhecido |
-| Avaliar aderência ao escopo. | Conhecido |
-| Registrar riscos. | Conhecido |
-| Solicitar informações complementares. | Conhecido |
-| Atribuir responsável. | Conhecido |
-| Definir prioridade. | Conhecido |
-| Registrar observações internas. | Conhecido |
-| Indicar próximo passo. | Conhecido |
-| Alterar status permitidos. | Conhecido |
-| Registrar mapeamento. | Conhecido |
-| Registrar pendências. | Conhecido |
-| Administrar categorias. | Não previsto |
-| Administrar usuários. | Não previsto |
-| Exportar dados. | Pendente |
-| Apagar histórico. | Não permitido |
+| Consultar demandas atribuídas. | Conhecido/Permitido |
+| Revisar informações recebidas. | Conhecido/Permitido |
+| Ajustar categoria. | Conhecido/Permitido |
+| Registrar complexidade preliminar. | Conhecido/Permitido |
+| Avaliar aderência ao escopo. | Conhecido/Permitido |
+| Registrar riscos. | Conhecido/Permitido |
+| Solicitar informações complementares. | Conhecido/Permitido |
+| Atribuir responsável. | Conhecido/Não Permitido |
+| Definir prioridade. | Conhecido/Permitido |
+| Registrar observações internas. | Conhecido/Permitido |
+| Indicar próximo passo. | Conhecido/Permitido |
+| Alterar status permitidos. | Conhecido/Permitido |
+| Registrar mapeamento. | Conhecido/Permitido |
+| Registrar pendências. | Conhecido/Permitido |
+| Administrar categorias. | Conhecido/Não Permitido |
+| Administrar usuários. | Conhecido/Não Permitido |
+| Exportar dados. | Conhecido/Permitido |
+| Apagar histórico. | Conhecido/Não Permitido |
 
 ### Restrições conhecidas
 
@@ -160,7 +155,7 @@
     <li>não deve administrar parâmetros globais, salvo permissão específica;</li>
     <li>não deve apagar histórico;</li>
     <li>deve respeitar as regras de auditoria;</li>
-    <li>observações internas não devem ser exibidas ao solicitante.</li>
+    <li>Não poderão administrar usuários;</li>
 </ul>
 
 ### Pendências
@@ -168,9 +163,6 @@
 | Pendência | Impacto | Responsável por decidir |
 |---|---|---|
 | O analista pode ver toda a fila ou somente demandas atribuídas? | Impacta painel, permissões e UX. | Produto. |
-| O analista pode atribuir responsável a si mesmo? | Impacta fluxo de triagem. | Produto. |
-| Quais status podem ser alterados pelo analista? | Impacta máquina de status. | Produto e Backend. |
-| O analista poderá exportar dados? | Impacta permissões e segurança. | Produto. |
 
 ## 6. Administrador do NEO
 
@@ -197,25 +189,25 @@ O Administrador do NEO é o perfil responsável pela administração operacional
 
 | Ação | Situação |
 |---|---|
-| Consultar todas as demandas. | Conhecido |
-| Visualizar e filtrar a fila. | Conhecido |
-| Abrir detalhes do pedido. | Conhecido |
-| Alterar categoria. | Conhecido |
-| Definir prioridade. | Conhecido |
-| Atribuir responsável. | Conhecido |
-| Alterar status. | Conhecido |
-| Registrar pendências. | Conhecido |
-| Registrar mapeamento. | Conhecido |
-| Incluir comentários internos. | Conhecido |
-| Registrar conclusão. | Conhecido |
-| Cancelar solicitação. | Conhecido |
-| Exportar dados. | Conhecido |
-| Consultar histórico. | Conhecido |
-| Administrar categorias. | Conhecido |
-| Administrar responsáveis. | Conhecido |
-| Administrar parâmetros. | Conhecido |
-| Administrar usuários e perfis básicos. | Pendente |
-| Apagar histórico pela interface comum. | Não permitido |
+| Consultar todas as demandas. | Conhecido/Permitido |
+| Visualizar e filtrar a fila. | Conhecido/Permitido |
+| Abrir detalhes do pedido. | Conhecido/Permitido |
+| Alterar categoria. | Conhecido/Permitido |
+| Definir prioridade. | Conhecido/Permitido |
+| Atribuir responsável. | Conhecido/Permitido |
+| Alterar status. | Conhecido/Permitido |
+| Registrar pendências. | Conhecido/Permitido |
+| Registrar mapeamento. | Conhecido/Permitido |
+| Incluir comentários internos. | Conhecido/Permitido |
+| Registrar conclusão. | Conhecido/Permitido |
+| Cancelar solicitação. | Conhecido/Permitido |
+| Exportar dados. | Conhecido/Permitido |
+| Consultar histórico. | Conhecido/Permitido |
+| Administrar categorias. | Conhecido/Permitido |
+| Administrar responsáveis. | Conhecido/Permitido |
+| Administrar parâmetros. | Conhecido/Permitido |
+| Administrar usuários e perfis básicos. | Não Mapeado/Permitido |
+| Apagar histórico pela interface comum. | Conhecido/Não permitido |
 
 ### Restrições conhecidas
 <ul>
@@ -223,13 +215,13 @@ O Administrador do NEO é o perfil responsável pela administração operacional
     <li>alterações relevantes devem gerar auditoria.</li>
     <li>informações restritas devem ser acessadas apenas por usuários autorizados</li>
     <li>categorias não devem ficar fixas no código.</li>
+    <li>Não poderão excluir a si mesmos ou a outros administradores</li>
 </ul>
 
 ### Pendências
 
 | Pendência | Impacto | Responsável por decidir |
 |---|---|---|
-| O Administrador do NEO poderá criar e gerenciar usuários? | Impacta módulo de usuários e perfis. | Produto e Backend. |
 | Haverá separação clara entre Administrador do NEO e Admin Root? | Impacta permissões e segurança. | Produto e Tech Lead. |
 | O Administrador poderá editar dados após conclusão? | Impacta auditoria e regras de negócio. | Produto. |
 
@@ -253,17 +245,17 @@ O Gestor/Visualizador é o perfil que acompanha indicadores, relatórios e a fil
 
 | Ação | Situação |
 |---|---|
-| Consultar fila. | Conhecido |
-| Consultar indicadores. | Conhecido |
-| Exportar relatórios. | Conhecido |
-| Abrir solicitações para visualização. | Pendente |
+| Consultar fila. | Conhecido/Permitido |
+| Consultar indicadores. | Conhecido/Permitido |
+| Exportar relatórios. | Conhecido/Permitido |
+| Abrir solicitações para visualização. | Conhecido/Permitido |
 | Alterar status. | Não permitido |
-| Definir prioridade. | Não permitido |
-| Atribuir responsável. | Não permitido |
-| Registrar pendências. | Não permitido |
-| Registrar mapeamento. | Não permitido |
-| Administrar parâmetros. | Não permitido |
-| Apagar histórico. | Não permitido |
+| Definir prioridade. | Conhecido/Não permitido |
+| Atribuir responsável. | Conhecido/Não permitido |
+| Registrar pendências. | Conhecido/Não permitido |
+| Registrar mapeamento. | Conhecido/Não permitido |
+| Administrar parâmetros. | Conhecido/Não permitido |
+| Apagar histórico. | Conhecido/Não permitido |
 
 ### Restrições conhecidas
 
@@ -286,7 +278,7 @@ O Gestor/Visualizador é o perfil que acompanha indicadores, relatórios e a fil
 
 ### Objetivo dentro do sistema
 
-O Admin Root é uma role técnica adicional proposta pelo time. Ele não é um perfil funcional previsto originalmente na especificação, mas foi identificado para apoiar necessidades técnicas, administrativas ou de implantação.
+O Admin Root é uma role técnica adicional proposta pelo time. Ele não é um perfil funcional previsto originalmente na especificação, mas foi identificado para apoiar necessidades técnicas, administrativas ou de implantação. Já que não deve haver dados de autenticação no sistema, o primeiro usuário cadastrado que devera realizar o registro dos demais usuários.
 
 ### Situação atual
 
@@ -311,13 +303,25 @@ Este perfil ainda precisa de validação formal. O documento registra a existên
 
 | Ação | Situação |
 |---|---|
-| Administrar usuários. | Pendente |
-| Administrar roles. | Pendente |
-| Administrar parâmetros técnicos. | Pendente |
-| Acessar logs técnicos. | Pendente |
-| Realizar correções excepcionais. | Pendente |
-| Executar ações operacionais comuns. | Não recomendado |
-| Apagar histórico pela interface comum. | Não permitido |
+| Consultar todas as demandas. | Não Mapeado/Permitido |
+| Visualizar e filtrar a fila. | Não Mapeado/Permitido |
+| Abrir detalhes do pedido. | Não Mapeado/Permitido |
+| Alterar categoria. | Não Mapeado/Permitido |
+| Definir prioridade. | Não Mapeado/Permitido |
+| Atribuir responsável. | Não Mapeado/Permitido |
+| Alterar status. | Não Mapeado/Permitido |
+| Registrar pendências. | Não Mapeado/Permitido |
+| Registrar mapeamento. | Não Mapeado/Permitido |
+| Incluir comentários internos. | Não Mapeado/Permitido |
+| Registrar conclusão. | Não Mapeado/Permitido |
+| Cancelar solicitação. | Não Mapeado/Permitido |
+| Exportar dados. | Não Mapeado/Permitido |
+| Consultar histórico. | Não Mapeado/Permitido |
+| Administrar categorias. | Não Mapeado/Permitido |
+| Administrar responsáveis. | Não Mapeado/Permitido |
+| Administrar parâmetros. | Não Mapeado/Permitido |
+| Administrar usuários e perfis básicos. | Não Mapeado/Permitido |
+| Apagar histórico pela interface comum. | Não Mapeado/Não permitido |
 
 ### Restrições recomendadas
 
@@ -334,8 +338,6 @@ Este perfil ainda precisa de validação formal. O documento registra a existên
 | Pendência | Impacto | Responsável por decidir |
 |---|---|---|
 | O Admin Root será uma role da aplicação ou apenas acesso técnico de infraestrutura? | Impacta backend, segurança e banco. | Backend e Tech Lead. |
-| O Admin Root poderá administrar usuários e perfis? | Impacta matriz de permissões. | Produto e Backend. |
-| O Admin Root poderá acessar todas as solicitações? | Impacta privacidade e segurança. | Produto e Backend. |
 | Haverá log especial para ações de Admin Root? | Impacta auditoria. | Backend. |
 | Quantas pessoas poderão ter Admin Root? | Impacta governança. | Produto e Tech Lead. |
 
@@ -352,24 +354,24 @@ Legenda:
 
 | Ação | Solicitante | Analista/Mapeador | Administrador do NEO | Gestor/Visualizador | Admin Root |
 |---|---:|---:|---:|---:|---:|
-| Abrir nova solicitação | S | P | P | N | N |
-| Consultar próprio protocolo | S | P | S | N | P |
-| Visualizar fila completa | N | C | S | S | P |
-| Visualizar demandas atribuídas | N | S | S | P | P |
-| Registrar triagem | N | S | S | N | P |
-| Ajustar categoria | N | S | S | N | P |
-| Definir prioridade | N | S | S | N | P |
-| Atribuir responsável | N | S | S | N | P |
-| Alterar status | N | C | S | N | P |
-| Registrar pendências | N | S | S | N | P |
-| Registrar mapeamento | N | S | S | N | P |
-| Ver observações internas | N | S | S | P | P |
-| Consultar histórico | N | C | S | P | P |
-| Exportar dados | N | P | S | S | P |
-| Administrar categorias | N | N | S | N | P |
-| Administrar responsáveis | N | N | S | N | P |
-| Administrar parâmetros | N | N | S | N | P |
-| Administrar usuários | N | N | P | N | P |
+| Abrir nova solicitação | S | S | S | S | S |
+| Consultar próprio protocolo | S | S | S | S | S |
+| Visualizar fila completa | N | C | S | S | S |
+| Visualizar demandas atribuídas | N | S | S | S | S |
+| Registrar triagem | N | S | S | N | S |
+| Ajustar categoria | N | S | S | N | S |
+| Definir prioridade | N | S | S | N | S |
+| Atribuir responsável | N | S | S | N | S |
+| Alterar status | N | C | S | N | S |
+| Registrar pendências | N | S | S | N | s |
+| Registrar mapeamento | N | S | S | N | S |
+| Ver observações internas | N | S | S | S | S |
+| Consultar histórico | N | C | S | S | S |
+| Exportar dados | N | S | S | S | S |
+| Administrar categorias | N | N | S | N | S |
+| Administrar responsáveis | N | N | S | N | S |
+| Administrar parâmetros | N | N | S | N | S |
+| Administrar usuários | N | N | S | N | S |
 | Apagar histórico pela interface comum | N | N | N | N | N |
 
 ## 10. Regras gerais de acesso conhecidas
