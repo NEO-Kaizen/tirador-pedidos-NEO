@@ -1,9 +1,3 @@
-<style>
-    p, ul, ol {
-        text-align: justify;
-    }
-</style>
-
 # Usuários, Perfis e Regras de Acesso — Tirador de Pedidos do NEO
 
 ## Controle do documento
