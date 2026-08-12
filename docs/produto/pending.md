@@ -43,3 +43,17 @@ Estes itens **não constituem regras de negócio confirmadas** para o MVP e deve
 - **Impacto:** Privacidade técnica e governança operacional.
 - **Responsável por decidir:** Produto.
 - **Status:** Pendente.
+
+### PEND-005 — Validação de Domínio de E-mail
+- **Regra:** O formulário de abertura de solicitações deve validar o campo de e-mail corporativo do solicitante, rejeitando domínios de e-mails públicos ou não autorizados.
+- **Condição:** No momento do preenchimento e clique em "Enviar".
+- **Comportamento esperado:** Aceitar apenas domínios corporativos parametrizados (ex: `@RESTRITO.com` ou `@RESTRITO.com`). Exibir alerta na tela em caso de falha.
+- **Origem:** Especificação de requisitos.
+- **Status:** Pendente.
+
+### PEND-006 — Validação de Chave Dupla para Acompanhamento
+- **Regra:** O solicitante só pode acessar o andamento de sua solicitação na área pública se fornecer a combinação idêntica e correta do número do protocolo e e-mail cadastrados na abertura.
+- **Condição:** Busca de protocolo na área pública.
+- **Comportamento esperado:** Se o par de dados não for correspondente, retornar mensagem genérica de erro ("Protocolo ou e-mail não encontrados"). Bloquear acessos por tentativa e erro de números sequenciais de protocolo.
+- **Origem:** Considerações de cibersegurança e alinhamento de privacidade de dados.
+- **Status:** Pendente.
