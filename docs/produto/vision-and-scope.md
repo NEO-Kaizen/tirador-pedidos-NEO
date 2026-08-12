@@ -1,9 +1,3 @@
-<style>
-    p {
-        text-align: justify;
-    }
-</style>
-
 # Visão, Problema e Escopo do Produto — Tirador de Pedidos do NEO
 
 ## Controle do documento
@@ -16,7 +10,7 @@
 | Time responsável | Produto |
 | Status | Em revisão |
 | Classificação | Restrito |
-| Issue relacionada | #18 |
+| Issue relacionada | #18, #21 |
 | Épico relacionado | #19 |
 
 ## 1. Visão do produto
@@ -84,7 +78,7 @@ Em visão macro, o produto deve atender aos seguintes usuários:
 | Gestor/Visualizador | Consulta fila, indicadores e relatórios, sem alterar registros operacionais. |
 | Admin Root | Perfil técnico adicional definido pelo time para administração técnica, suporte ou configuração inicial. |
 
-<p style="color: green;">Observação: a especificação técnica original prevê quatro perfis principais. O quinto perfil, Admin Root, foi incluído por decisão técnica do time e precisa ter limites claramente validados.</p>
+**<p>Observação: a especificação técnica original prevê quatro perfis principais. O quinto perfil, Admin Root, foi incluído por decisão técnica do time e precisa ter limites claramente validados.</p>**
 
 ## 6. Fluxo macro do produto
 
@@ -107,5 +101,5 @@ Acesso à aplicação
 
 <ul>
     <li>Link do prototipo no figma:</li>
-    <a>https://www.figma.com/design/Z4Vhez5HFfolIv3uaMMyyF/NEO---Kaizen?node-id=1-2&p=f</a>
+    https://www.figma.com/design/Z4Vhez5HFfolIv3uaMMyyF/NEO---Kaizen?node-id=1-2&p=f
 </ul>
