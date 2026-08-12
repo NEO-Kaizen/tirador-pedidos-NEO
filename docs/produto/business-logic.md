@@ -6,8 +6,8 @@ Este documento reúne e detalha as Regras de Negócio (RNs) que regem os comport
 
 | Campo | Informação |
 |---|---|
-| Produto | RESTRITO |
-| Documento | `docs/produto/regras-de-negocio.md` |
+| Produto | Tirador de Pedidos NEO |
+| Documento | `docs/produto/business-logic.md` |
 | Sprint | Sprint 1 (Consolidação) |
 | Status | Pronto para Integração |
 
@@ -27,7 +27,7 @@ Este documento reúne e detalha as Regras de Negócio (RNs) que regem os comport
 - **Condição:** No momento do preenchimento e clique em "Enviar".
 - **Comportamento esperado:** Aceitar apenas domínios corporativos parametrizados (ex: `@RESTRITO.com` ou `@RESTRITO.com`). Exibir alerta na tela em caso de falha.
 - **Origem:** Especificação de requisitos.
-- **Status:** Confirmada.
+- **Status:** Não Confirmado.
 
 ### RN-003 — Inexistência de Caching em Tela (Local Storage)
 - **Regra:** O sistema não deve fazer uso de `Local Storage` ou qualquer mecanismo de cache local no navegador para salvar provisoriamente o rascunho de preenchimento do formulário.
@@ -52,7 +52,7 @@ Este documento reúne e detalha as Regras de Negócio (RNs) que regem os comport
 - **Condição:** Busca de protocolo na área pública.
 - **Comportamento esperado:** Se o par de dados não for correspondente, retornar mensagem genérica de erro ("Protocolo ou e-mail não encontrados"). Bloquear acessos por tentativa e erro de números sequenciais de protocolo.
 - **Origem:** Considerações de cibersegurança e alinhamento de privacidade de dados.
-- **Status:** Confirmada.
+- **Status:** Não Confirmado.
 
 ### RN-006 — Autenticação Administrativa Segura (JWT)
 - **Regra:** Toda e qualquer sessão administrativa ou técnica interna do sistema deve ser protegida por credenciais armazenadas de forma segura (uso de algoritmo de hashing de senha no banco de dados) e gerenciamento de estado via JSON Web Tokens (JWT).
