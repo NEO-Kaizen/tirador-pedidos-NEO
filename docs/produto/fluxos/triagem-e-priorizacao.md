@@ -27,7 +27,7 @@ flowchart TD
     K -- Não --> L[Registra justificativa obrigatória de recusa]
     L --> M[Altera status para Não elegível / Outra área]
     M --> N[Fim: Demanda encerrada na triagem]
-    K -- Sim --> O[Atribui responsável técnico manualmente]
+    K -- Sim --> O[O Administrador atribui responsável técnico manualmente]
     O --> P[Altera status para Aguardando mapeamento]
     P --> Q[Fim: Demanda liberada para agendamento]
 ```
@@ -53,5 +53,5 @@ flowchart TD
     - _Não Elegível:_ Demanda rejeitada por não-aderência. **O preenchimento do campo descritivo de justificativa da decisão torna-se obrigatório no sistema**. O status vira **Não elegível**.
     - _Direcionada para Outra Área:_ Demanda fora do escopo do NEO, mas útil a outro núcleo. O analista preenche obrigatoriamente a justificativa e a área destinatária, e o status vira **Direcionado para outra área**.
     - _Duplicada:_ O sistema exige a inserção do protocolo da demanda principal e o status vira **Cancelado**.
-6.  **Atribuição Manual do Responsável:** O Analista / Administrador seleciona na lista um dos profissionais ativos cadastrados no banco. A tela do NEO exibe dinamicamente ao lado do nome do profissional a sua carga de trabalho corrente (ex: "Analista João - 4 demandas em andamento") para apoiar o equilíbrio operacional.
-7.  **Persistência e Histórico:** O usuário salva as alterações. O sistema persiste os dados e registra uma entrada imutável no Histórico de Auditoria registrando autor, data, hora, os valores anteriores e os novos valores do status, prioridade e responsável.
+6.  **Atribuição Manual do Responsável:** O Administrador seleciona na lista um dos profissionais ativos cadastrados no banco. A tela do NEO exibe dinamicamente ao lado do nome do profissional a sua carga de trabalho corrente (ex: "Analista João - 4 demandas em andamento") para apoiar o equilíbrio operacional.
+7.  **Persistência e Histórico:** O Administrador salva as alterações. O sistema persiste os dados e registra uma entrada imutável no Histórico de Auditoria registrando autor, data, hora, os valores anteriores e os novos valores do status, prioridade e responsável.
