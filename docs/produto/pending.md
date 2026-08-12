@@ -1,4 +1,4 @@
-# Pendências e Decisões de Produto — RESTRITO
+# Pendências e Decisões de Produto — Tirador de Produtos NEO
 
 Este documento lista as dúvidas funcionais, hipóteses não confirmadas e discussões em aberto que foram identificadas e isoladas durante o mapeamento de requisitos. 
 
@@ -8,8 +8,8 @@ Estes itens **não constituem regras de negócio confirmadas** para o MVP e deve
 
 | Campo | Informação |
 |---|---|
-| Produto | RESTRITO |
-| Documento | `docs/produto/pendencias.md` |
+| Produto | Tirador de Produtos NEO |
+| Documento | `docs/produto/pending.md` |
 | Sprint | Sprint 1 (Consolidação) |
 | Status | Em Aberto / A Validar |
 

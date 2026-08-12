@@ -1,4 +1,4 @@
-# Regras de Negócio — RESTRITO
+# Regras de Negócio — Tirador de Pedidos NEO
 
 Este documento reúne e detalha as Regras de Negócio (RNs) que regem os comportamentos funcionais, restrições, fórmulas matemáticas e fluxos de decisão do sistema.
 

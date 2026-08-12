@@ -1,4 +1,4 @@
-# Requisitos Funcionais — RESTRITO
+# Requisitos Funcionais — Tirador de Pedidos NEO
 
 Este documento lista e detalha os Requisitos Funcionais (RFs) mapeados e consolidados para o sistema. Eles descrevem o que a aplicação deve fazer e permitir que seus atores executem.
 
@@ -6,8 +6,8 @@ Este documento lista e detalha os Requisitos Funcionais (RFs) mapeados e consoli
 
 | Campo | Informação |
 |---|---|
-| Produto | RESTRITO |
-| Documento | `docs/produto/requisitos-funcionais.md` |
+| Produto | Tirador de Pedidos NEO |
+| Documento | `docs/produto/funcional-requisitions.md` |
 | Sprint | Sprint 1 (Consolidação) |
 | Status | Pronto para Integração |
 
