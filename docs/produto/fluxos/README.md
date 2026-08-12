@@ -61,4 +61,9 @@ O sistema utiliza um fluxo padronizado contendo **17 status** para garantir rast
 
 Para acessar o detalhamento funcional individual de cada jornada de uso, consulte os documentos a seguir:
 
-1.  **[Criação de Solicitação](./criacao-de-solicitacao.md):** Fluxo público de preenchimento, validação e abertura de demandas pelo Solicitante.
+1.  **[Criação de Solicitação](./criacao-de-solicitacao.md):** Fluxo de preenchimento, validação e abertura de demandas pelo Solicitante.
+2.  **[Consulta de Solicitação](./consulta-de-solicitacao.md):** Fluxo que permite ao solicitante acompanhar o andamento da sua demanda.
+3.  **[Logins e Perfis](./login-e-perfis.md):** Fluxo que estabelece o mecanismo de controle de segurança, autenticação e autorização de acesso
+4.  **[Triagem e Priorizacao](./triagem-e-priorizacao.md):** Fluxo utilizado pela equipe interna para avaliar, classificar, dimensionar a prioridade de atendimento e alocar recursos para cada solicitação recebida.
+5.  **[Registro de Mapeamento](./registro-de-mapeamento.md):** Fluxo administrativo interno que realiza a gestão, o agendamento e o controle manual das reuniões técnicas.
+6.  **[Gerenciamento de Configuracoes](./gerenciamento-de-configuracoes.md):** Fluxo de navegação do painel de Configurações e Parâmetros.
