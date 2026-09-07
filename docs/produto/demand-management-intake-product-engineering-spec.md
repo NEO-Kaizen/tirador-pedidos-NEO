@@ -1,6 +1,6 @@
 # Especificação de Produto & Engenharia — Sistema de Gestão de Demandas (Intake)
 
-Documento técnico e funcional de referência para os times de **Produto, Frontend, Backend, Segurança e QA**, unificando requisitos de negócio, arquitetura de dados, padrões de validação sincronizada (UI/DB), segurança criptográfica de consulta, esteira de triagem e proposta de branding.
+Documento técnico e funcional de referência para os times de **Produto, Frontend, Backend, Segurança e QA**, unificando requisitos de negócio, arquitetura de dados, padrões de validação sincronizada (UI/DB), segurança criptográfica de consulta, esteira de triagem, detecção de similaridade, central unificada de configurações e proposta de branding.
 
 ---
 
@@ -12,9 +12,9 @@ Documento técnico e funcional de referência para os times de **Produto, Fronte
 * **Área Solicitante:** Texto. **Obrigatório**.
 * **Departamento (Comportamento Dinâmico):**
   * **Regra de Renderização:** **Select OU Campo Aberto**.
-    * Se o Administrador tiver cadastrado a lista de departamentos no painel, a interface renderiza automaticamente um componente `<Select>` com os departamentos ativos.
+    * Se o Administrador tiver cadastrado a lista de departamentos na página de configurações, a interface renderiza automaticamente um componente `<Select>` com os departamentos ativos.
     * Caso não existam departamentos cadastrados no sistema, a interface exibe um campo de texto livre aberto para preenchimento manual.
-  * **Regra de Obrigatoriedade:** **Padrão: Opcional** (o administrador pode alternar a obrigatoriedade para obrigatório via painel).
+  * **Regra de Obrigatoriedade:** **Padrão: Opcional** (o administrador pode alternar a obrigatoriedade para obrigatório na página de configurações).
 * **Gestor Responsável:** Texto. **Obrigatório**.
 * **Contato Adicional:** Texto / Telefone / E-mail alternativo. **Opcional**.
 
@@ -22,7 +22,7 @@ Documento técnico e funcional de referência para os times de **Produto, Fronte
 * **Nome do Processo:** Texto. **Obrigatório**.
 * **Título Resumido da Solicitação:** Texto conciso. **Obrigatório**.
 * **Tipo de Solicitação:** Enquadramento macro do serviço (ex.: Automação, Melhoria, Manutenção). **Obrigatório**.
-* **Categoria da Demanda:** Select funcional com 10 opções base + suporte a novas categorias via API/Admin. **Obrigatório**.
+* **Categoria da Demanda:** Select funcional com 10 opções base + suporte a novas categorias gerenciadas na página de configurações. **Obrigatório**.
   1. *Automação* — Solicitações de automação de atividades operacionais.
   2. *Melhoria de processo* — Revisão, simplificação ou padronização de fluxo.
   3. *Indicador* — Criação ou evolução de métrica operacional.
@@ -40,7 +40,13 @@ Documento técnico e funcional de referência para os times de **Produto, Fronte
 
 > **Nota:** Justificativa e Resultado Esperado são **dois campos independentes** no formulário de abertura. Na conclusão posterior da triagem/mapeamento interno existe o campo consolidado de `Conclusão da Análise` técnica.
 
-### 1.3 Bloco 3: Informações Operacionais (14 Campos Completos)
+### 1.3 Detecção de Demandas Semelhantes / Possíveis Duplicidades (Alerta Não Impeditivo)
+* **Mecanismo de Checagem:** Durante o preenchimento do formulário (ao digitar campos-chave como *Nome do Processo*, *Título Resumido* e *Descrição*), o sistema executa uma análise de similaridade textual em segundo plano contra demandas previamente cadastradas (da mesma área/departamento).
+* **Alerta Visual na Interface:** Se for detectada alta correspondência com um chamado anterior, a UI exibe um banner/card informativo destacando:
+  > ⚠️ *"Aviso: Identificamos uma solicitação semelhante já cadastrada para este processo (Demanda: [Título / Código de Rastreio]). Verifique se o seu pedido já não está em andamento."*
+* **Caráter Não Bloqueante (Soft Warning):** O alerta possui finalidade exclusivamente **orientativa e consultiva**. Ele **NÃO impede** o envio do formulário, permitindo que o solicitante conclua o cadastro caso se trate de uma demanda diferente ou complementar.
+
+### 1.4 Bloco 3: Informações Operacionais (14 Campos Completos)
 1. **Descrição Resumida do Processo Atual:** Textarea. **Obrigatório**.
 2. **Principais Etapas do Processo:** Textarea em tópicos/passo a passo. **Obrigatório**.
 3. **Sistemas Utilizados:** Texto descritivo (softwares, ERPs, planilhas). **Obrigatório**.
@@ -56,7 +62,7 @@ Documento técnico e funcional de referência para os times de **Produto, Fronte
 13. **Prazo Desejado:** Data limite ideal para implantação. **Obrigatório**.
 14. **Criticidade Percebida pelo Solicitante:** Select (`Baixa`, `Média`, `Alta`, `Crítica`). **Obrigatório**.
 
-### 1.4 Bloco 4: Informações Complementares & Anexos
+### 1.5 Bloco 4: Informações Complementares & Anexos
 > **Regra Geral:** Todo o bloco complementar é **100% opcional**, devendo a interface sinalizar explicitamente que seu preenchimento é facultativo.
 
 * **Existência de Documentação do Processo:** Sim / Não (+ Detalhes/Links). **Opcional**.
@@ -72,6 +78,8 @@ Documento técnico e funcional de referência para os times de **Produto, Fronte
 
 | Pergunta | Resposta Oficial de Produto |
 |---|---|
+| **Onde os administradores configuram os parâmetros do sistema?** | **Em uma única página centralizada de Configurações.** Todas as parametrizações (pesos da priorização, departamentos, regras de obrigatoriedade, categorias, visibilidade de responsável e usuários) ficam reunidas em uma mesma tela de gestão. |
+| **Como funciona a detecção de chamados duplicados/parecidos?** | O sistema compara os dados digitados com chamados existentes e **exibe um alerta na tela**, sinalizando que já existe algo similar. **Não é um impeditivo**: o usuário é apenas avisado e pode prosseguir com o envio normalmente se desejar. |
 | **Como funciona o campo "Departamento"?** | **Híbrido (Select ou Texto Livre):** Se houver departamentos cadastrados pelo administrador, o front exibe um `<Select>`. Se a base não possuir departamentos cadastrados, o campo vira um `<input type="text">` aberto. A obrigatoriedade é configurável pelo Admin (padrão: opcional). |
 | **Como o solicitante consulta sua solicitação?** | A consulta pública é realizada **OU pelo E-mail Corporativo OU pelo Código Único de Acompanhamento (Token Criptográfico)**. Ao digitar o e-mail, o sistema lista diretamente todas as demandas vinculadas àquele solicitante. **Não há busca pública por protocolo sequencial**, eliminando o risco de varredura manual de chamados de terceiros. |
 | **Onde devem ser validados os limites de caracteres?** | **No Frontend (UI) E no Backend/Banco simultaneamente.** A UI deve aplicar limites máximos (`maxLength`) e contadores visuais estritamente alinhados ao schema do banco para evitar truncamento silencioso (*afunilamento de dados*) ou rejeições 500 no envio. |
@@ -197,11 +205,12 @@ Campos preenchidos manualmente pelo analista responsável:
 
 ---
 
-## 7. Painel Administrativo, Fila e Triagem com Revisão Total
+## 7. Painel Administrativo, Fila e Triagem
 
 ### 7.1 Gestão da Fila Operacional
 * **Colunas:** Protocolo Interno, Código de Rastreio, Data de Entrada (SLA), Processo, Área, Categoria, Prioridade, Criticidade, Status, Responsável, Previsão de Mapeamento, Última Atualização.
 * **Alertas Visuais:** Indicadores visuais de SLA estourado, pendência aberta e ausência de responsável.
+* **Sinalização de Similaridade na Fila:** Chamados que geraram alertas de duplicidade no momento do preenchimento recebem uma flag/ícone de destaque para orientar o analista.
 
 ### 7.2 Ações na Triagem & Capacidade de Revisão Total dos Dados
 Durante a etapa de triagem técnica, **o analista/operador tem permissão para revisar e corrigir TODOS os dados preenchidos incorretamente pelo usuário solicitante** no momento da abertura (desde erros ortográficos em nomes, departamentos, sistemas utilizados, até ajustes em volumetria e descrição).
@@ -217,9 +226,36 @@ Durante a etapa de triagem técnica, **o analista/operador tem permissão para r
 * `Pendente de informações` — Abre campos na tela do solicitante para complementação.
 * `Fora do escopo` — Encerra com justificativa técnica formal.
 * `Direcionada para outra área` — Transfere a demanda registrando área de destino.
-* `Duplicada` — Vincula e referencia a demanda principal.
+* `Duplicada` — Vincula e referencia a demanda principal (usado caso o usuário tenha enviado a solicitação mesmo após o alerta de similaridade).
 * `Cancelada` — Cancela o fluxo com motivo registrado.
 * `Backlog` — Mantém a demanda para priorização futura.
+
+### 7.4 Central Unificada de Configurações Administrativas (Página Única)
+Para simplificar a gestão e garantir governança centralizada, **todas as opções de parametrização do ecossistema NEO/MAAT ficam concentradas em uma única página de Configurações (`/admin/configuracoes`)**, organizada em abas lógicas:
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                        PAINEL DE CONFIGURAÇÕES DO SISTEMA                              │
+├──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬─────────────┤
+│ Formulários  │  Categorias  │ Priorização  │ Similaridade │   Usuários   │ Governança  │
+└──────────────┴──────────────┴──────────────┴──────────────┴──────────────┴─────────────┘
+```
+
+1. **Aba "Formulário & Campos":**
+   * **Cadastro de Departamentos:** Tabela de CRUD de departamentos (adicionar, renomear, desativar). Se a lista estiver vazia, o formulário automaticamente se converte para campo de texto livre.
+   * **Obrigatoriedade de Campos:** Chaves seletoras (*toggles*) para ativar/desativar a obrigatoriedade de campos parametrizáveis (ex.: *Tornar preenchimento de Departamento obrigatório*).
+   * **Visibilidade do Responsável:** Chave *toggle* para definir se o nome do analista/responsável fica visível ou oculto para o solicitante na consulta pública.
+2. **Aba "Categorias da Demanda":**
+   * Gestão completa (CRUD) das categorias funcionais: cadastrar novas categorias além das 10 base, editar descrições, definir ordem de exibição e desativar categorias obsoletas.
+3. **Aba "Matriz de Priorização & Pesos":**
+   * Configuração dos pesos ponderados (de $0.1$ a $5.0$) para cada uma das 10 dimensões analíticas.
+   * Calibração das faixas de corte para classificação automática do score final em *Baixa*, *Média*, *Alta* ou *Crítica*.
+4. **Aba "Detecção de Similaridade":**
+   * Ajuste do nível de sensibilidade / threshold de similaridade textual (ex.: disparar alerta ao atingir 75% de correspondência com chamados anteriores).
+5. **Aba "Usuários & Permissões":**
+   * Cadastro, edição e revogação de acessos de analistas, triadores e administradores.
+6. **Aba "Governança & LGPD":**
+   * Definição de políticas de retenção de dados, prazos de expurgo e regras de anonimização automática.
 
 ---
 
@@ -240,7 +276,7 @@ A priorização é calculada com base em **10 critérios**, com notas de **1 a 5
 
 $$\text{Score Final} = \frac{\sum_{i=1}^{10} (\text{Nota}_i \times \text{Peso}_i)}{\sum_{i=1}^{10} \text{Peso}_i}$$
 
-* **Pesos:** Padrão inicial $1.0$ para todas as dimensões, ajustável pelo Administrador.
+* **Pesos:** Padrão inicial $1.0$ para todas as dimensões, ajustável pelo Administrador na página de configurações.
 * **Classificação de Risco:** `Baixa`, `Média`, `Alta` ou `Crítica`.
 
 ---
@@ -250,7 +286,7 @@ $$\text{Score Final} = \frac{\sum_{i=1}^{10} (\text{Nota}_i \times \text{Peso}_i
 ### 9.1 Log de Auditoria (Uso Exclusivo Interno)
 Registrado a cada inserção, alteração ou exclusão:
 * Protocolo
-* Tipo da ação (`CRIACAO`, `ALTERACAO_STATUS`, `ALTERACAO_PRIORIDADE`, `ATRIBUICAO_RESPONSAVEL`, `CORRECAO_DADOS_SOLICITANTE`, `REGISTRO_MAPEAMENTO`, `INCLUSAO_PENDENCIA`, `CONCLUSAO`, `CANCELAMENTO`)
+* Tipo da ação (`CRIACAO`, `ALTERACAO_STATUS`, `ALTERACAO_PRIORIDADE`, `ATRIBUICAO_RESPONSAVEL`, `CORRECAO_DADOS_SOLICITANTE`, `REGISTRO_MAPEAMENTO`, `INCLUSAO_PENDENCIA`, `ALTERACAO_CONFIGURACOES`, `CONCLUSAO`, `CANCELAMENTO`)
 * Operador responsável
 * Data e horário exatos
 * Valor anterior vs. Novo valor
@@ -268,6 +304,7 @@ Registrado a cada inserção, alteração ou exclusão:
 * **Segurança e Seeds:** Credenciais de administradores e chaves criptográficas (`SECRET_SEED_KEY` para FPE/Feistel) injetadas via `.env`.
 * **Dark Mode:** Compatibilidade nativa com temas claro e escuro.
 * **Página Inicial:** Inclusão de atalhos rápidos de navegação e visão panorâmica de chamados.
+* **Mecanismo de Similaridade:** Implementação de busca fuzzy / n-gram / trigramas ou busca vetorial de texto no backend para alimentar o card de aviso de demandas similares em tempo de digitação.
 
 ---
 
