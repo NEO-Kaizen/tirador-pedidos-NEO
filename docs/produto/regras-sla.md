@@ -265,6 +265,13 @@ Os valores e regras poderão ser ajustados após a validação.
 
 ---
 
+## X. Casos Especiais e Comportamentos de Exceção
+
+* **Alteração de Prioridade:** Se a prioridade de uma solicitação for alterada durante o andamento de uma etapa, o prazo remanescente deverá ser recalculado proporcionalmente com base no tempo já consumido versus o novo teto da prioridade.
+* **Estouro de SLA (Sliver/Vencido):** Quando o contador atingir 0h (100% ou mais), o SLA passa a ser considerado vencido, o indicador visual torna-se vermelho e o contador passa a exibir o tempo excedido (ex: `SLA vencido há 2h`) ou fixo em `SLA vencido`, dependendo da diretriz de UX.
+
+---
+
 ## 16. Referências
 
 * Issue #32 — `PRODUTO - Refinar regras de SLA das solicitações`.
