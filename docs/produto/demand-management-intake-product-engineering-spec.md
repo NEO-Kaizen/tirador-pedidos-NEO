@@ -263,16 +263,16 @@ Para simplificar a gestão e garantir governança centralizada, **todas as opç�
 
 A priorização é calculada com base em **10 critérios**, com notas de **1 a 5**:
 
-1. Impacto Operacional (1 a 5)
-2. Risco Operacional (1 a 5)
-3. Urgência (1 a 5)
-4. Volumetria (1 a 5)
-5. Esforço Manual (1 a 5)
-6. Impacto no Cliente (1 a 5)
-7. Prazo Regulatório (1 a 5)
-8. Áreas Impactadas (1 a 5)
-9. Alinhamento Estratégico (1 a 5)
-10. Complexidade Estimada (1 a 5)
+1. Impacto Operacional (1 a 10)
+2. Risco Operacional (1 a 10)
+3. Urgência (1 a 10)
+4. Volumetria (1 a 10)
+5. Esforço Manual (1 a 10)
+6. Impacto no Cliente (1 a 10)
+7. Prazo Regulatório (1 a 10)
+8. Áreas Impactadas (1 a 10)
+9. Alinhamento Estratégico (1 a 10)
+10. Complexidade Estimada (1 a 10)
 
 $$\text{Score Final} = \frac{\sum_{i=1}^{10} (\text{Nota}_i \times \text{Peso}_i)}{\sum_{i=1}^{10} \text{Peso}_i}$$
 
